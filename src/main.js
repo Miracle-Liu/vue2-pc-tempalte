@@ -3,7 +3,7 @@
  * @Features:
  * @Author: Miri
  * @Date: 2020-10-24 11:40:20
- * @LastEditTime: 2020-10-24 13:53:24
+ * @LastEditTime: 2020-10-24 14:55:27
  * @LastEditors: Miri
  * @Maintainer: Miri
  * @Contributor: Miri
@@ -14,6 +14,7 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
 import '@/plugins/lodash-plugin.js'
+import '@/assets/css/main.scss'
 
 import App from './App.vue'
 import './registerServiceWorker'
