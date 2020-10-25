@@ -1,0 +1,15 @@
+
+
+// @import url("./variables.css"); 不能用这种方式导入,无法识别,会当作css的导入,导致全局配置注入报错
+
+@import "variables.scss";
+
+
+@mixin border($w:1px, $s:solid, $c:$border-color, $d: bottom ) {
+    @if $d {
+        border-#{ $d }:$w $s $c;
+    }
+    @else {
+         border:$w $s $c;
+    }
+}

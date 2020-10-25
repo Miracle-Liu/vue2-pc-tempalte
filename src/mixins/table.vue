@@ -3,7 +3,7 @@
  * @Features:
  * @Author: Miri
  * @Date: 2020-08-13 18:06:33
- * @LastEditTime: 2020-10-25 15:24:17
+ * @LastEditTime: 2020-10-25 16:41:20
  * @LastEditors: Miri
  * @Maintainer: Miri
  * @Contributor: Miri
@@ -164,23 +164,22 @@ export default {
   height: 80px;
   display: flex;
   align-items: center;
-
   position: fixed;
   bottom: 0;
 }
-.table-data-section {
-  height: calc(100% - 65px);
-  width: 100%;
-}
-.table-data-scrollbar {
-  height: calc(100% - 200px);
-  width: 100%;
-}
-.custom-table {
-  width: fit-content;
-  max-width: none;
-  min-width: 100%;
-}
+// .table-data-section {
+//   height: calc(100% - 65px);
+//   width: 100%;
+// }
+// .table-data-scrollbar {
+//   height: calc(100% - 200px);
+//   width: 100%;
+// }
+// .custom-table {
+//   width: fit-content;
+//   max-width: none;
+//   min-width: 100%;
+// }
 // .el-table__body-wrapper{
 //   height:calc(100% - 80px);
 // }
