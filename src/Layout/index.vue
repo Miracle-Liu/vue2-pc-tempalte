@@ -13,9 +13,8 @@
   <div class="layout-box">
     <Header />
     <div class="contents-box">
-      <LeftNav>
-        <router-view class="right-panel" />
-      </leftnav>
+      <LeftNav />
+      <router-view class="right-panel" />
     </div>
 
   </div>

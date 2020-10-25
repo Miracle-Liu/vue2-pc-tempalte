@@ -16,11 +16,29 @@ const routes = [
       {
         path: '/home',
         name: 'home',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
-          import(/* webpackChunkName: "about" */ '../views/Home.vue')
+          import('../views/Home.vue')
+      },
+      // 预警中心
+      {
+        path: '/warningCenter',
+        name: 'warningCenter',
+        component: () =>
+          import('@/views/warningCenter/index.vue')
+      },
+      // 监管配置
+      {
+        path: '/regulatoryConfiguration',
+        name: 'regulatoryConfiguration',
+        component: () =>
+          import('@/views/regulatoryConfiguration/index.vue')
+      },
+      // 监管日志
+      {
+        path: '/regulatoryLog',
+        name: 'regulatoryLog',
+        component: () =>
+          import('@/views/regulatoryLog/index.vue')
       }
     ]
   }

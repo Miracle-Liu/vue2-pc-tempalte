@@ -2,7 +2,7 @@
 <template>
   <div class="home">
 
-    Home
+    Homeadaadasd
 
   </div>
 </template>

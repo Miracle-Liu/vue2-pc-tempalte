@@ -36,7 +36,7 @@ export default {
         {
           name: '预警中心',
           icon: '',
-          route: ''
+          route: 'warningCenter'
         },
         {
           name: '监管配置',
@@ -70,7 +70,7 @@ export default {
   methods: {
     jump(item, index) {
       this.selectedIndex = index
-      this.$router.push(item.route)
+      this.$router.push({ name: item.route })
     }
   }
 }
