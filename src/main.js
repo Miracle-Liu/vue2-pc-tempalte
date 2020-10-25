@@ -3,7 +3,7 @@
  * @Features:
  * @Author: Miri
  * @Date: 2020-10-24 11:40:20
- * @LastEditTime: 2020-10-24 14:55:27
+ * @LastEditTime: 2020-10-25 15:15:09
  * @LastEditors: Miri
  * @Maintainer: Miri
  * @Contributor: Miri
@@ -20,6 +20,9 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+
+import VuePerfectScrollbar from 'vue-perfect-scrollbar'
+Vue.component('VuePerfectScrollbar', VuePerfectScrollbar)
 
 Vue.use(ElementUI)
 

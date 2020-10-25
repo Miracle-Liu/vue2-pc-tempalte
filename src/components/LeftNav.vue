@@ -41,12 +41,12 @@ export default {
         {
           name: '监管配置',
           icon: '',
-          route: ''
+          route: 'regulatoryConfiguration'
         },
         {
           name: '监管日志',
           icon: '',
-          route: ''
+          route: 'regulatoryLog'
         }
       ]
 
