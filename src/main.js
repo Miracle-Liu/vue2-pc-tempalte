@@ -11,10 +11,11 @@
  */
 import Vue from 'vue'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
-import 'element-ui/lib/theme-chalk/index.css'
-import ElementUI from 'element-ui'
-import '@/plugins/lodash-plugin.js'
 import '@/assets/css/main.scss'
+import '@/plugins/lodash-plugin.js'
+
+import ElementUI from 'element-ui'
+import '@/assets/css/element-variables.scss'
 
 import App from './App.vue'
 import './registerServiceWorker'
