@@ -5,11 +5,18 @@
 @import "variables.scss";
 
 
-@mixin border($w:1px, $s:solid, $c:$border-color, $d: bottom ) {
-    @if $d {
-        border-#{ $d }:$w $s $c;
-    }
-    @else {
-         border:$w $s $c;
-    }
+@mixin border($w:1px, $s:solid, $c:$border-color) {
+    border:$w $s $c;
+}
+@mixin border-b($w:1px, $s:solid, $c:$border-color) {
+    border-bottom:$w $s $c;
+}
+@mixin border-t($w:1px, $s:solid, $c:$border-color) {
+    border-top:$w $s $c;
+}
+@mixin border-l($w:1px, $s:solid, $c:$border-color) {
+    border-left:$w $s $c;
+}
+@mixin border-r($w:1px, $s:solid, $c:$border-color) {
+    border-right:$w $s $c;
 }
