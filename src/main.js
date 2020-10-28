@@ -3,7 +3,7 @@
  * @Features:
  * @Author: Miri
  * @Date: 2020-10-24 11:40:20
- * @LastEditTime: 2020-10-25 15:15:09
+ * @LastEditTime: 2020-10-28 10:54:57
  * @LastEditors: Miri
  * @Maintainer: Miri
  * @Contributor: Miri
@@ -12,10 +12,14 @@
 import Vue from 'vue'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import '@/assets/css/main.scss'
-import '@/plugins/lodash-plugin.js'
+import LodashPlugin from '@/plugins/lodash-plugin.js'
 
 import ElementUI from 'element-ui'
 import '@/assets/css/element-variables.scss'
+import '@/assets/iconfont/iconfont.css'
+
+import WordCloud from 'wordcloud'
+window.WordCloud = WordCloud
 
 import App from './App.vue'
 import './registerServiceWorker'
@@ -26,6 +30,7 @@ import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 Vue.component('VuePerfectScrollbar', VuePerfectScrollbar)
 
 Vue.use(ElementUI)
+Vue.use(LodashPlugin)
 
 Vue.config.productionTip = false
 

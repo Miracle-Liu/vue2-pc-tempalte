@@ -3,7 +3,7 @@
  * @Features:
  * @Author: Miri
  * @Date: 2020-10-24 14:33:41
- * @LastEditTime: 2020-10-24 16:05:28
+ * @LastEditTime: 2020-10-27 15:47:07
  * @LastEditors: Miri
  * @Maintainer: Miri
  * @Contributor: Miri
@@ -12,11 +12,17 @@
 <!--  -->
 <template>
   <div class="left-nav-box">
-    <div v-for="(item,index) in navList" :key="index" :class="['f-xc','nav-item',index===selectedIndex?'active':'']" @click="jump(item,index)">
-      <div>
-        {{ item.name }}
-      </div>
-    </div>
+    <el-menu
+      default-active="1"
+      class="el-menu-vertical-demo"
+    >
+      <el-menu-item v-for="(item,index) in navList" :key="index" :index="index+1" @click="jump(item,index)">
+        <div class="f-xc">
+          <i :class="['iconfont',item.icon,'icon']" />
+          <span slot="title">{{ item.name }}</span>
+        </div>
+      </el-menu-item>
+    </el-menu>
   </div>
 </template>
 
@@ -30,22 +36,22 @@ export default {
       navList: [
         {
           name: '概况统计',
-          icon: '',
-          route: ''
+          icon: 'icongaikuangyuji',
+          route: 'home'
         },
         {
           name: '预警中心',
-          icon: '',
+          icon: 'iconyujing',
           route: 'warningCenter'
         },
         {
           name: '监管配置',
-          icon: '',
+          icon: 'iconpeizhi',
           route: 'regulatoryConfiguration'
         },
         {
           name: '监管日志',
-          icon: '',
+          icon: 'iconjianguan',
           route: 'regulatoryLog'
         }
       ]
@@ -81,6 +87,9 @@ export default {
     width: 230px;
     height: 100%;
     box-shadow: 0 2px 7px 0 rgba(190,190,190,0.50);
+    .icon{
+      margin-right: 20px;
+    }
     .nav-item{
         height: 40px;
         font-family: PingFangSC-Medium;
