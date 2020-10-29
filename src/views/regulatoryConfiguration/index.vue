@@ -3,7 +3,7 @@
  * @Features:
  * @Author: Miri
  * @Date: 2020-10-25 11:49:06
- * @LastEditTime: 2020-10-28 11:27:56
+ * @LastEditTime: 2020-10-28 15:47:40
  * @LastEditors: Miri
  * @Maintainer: Miri
  * @Contributor: Miri
@@ -51,6 +51,39 @@
       </div>
 
     </div>
+    <div class="face-box">
+      <div class="section">
+
+        <div class="up-box">
+          <UploadAvatar
+            :type="'user'"
+            :default-avatar="logo_url"
+            :callback="avatarChange"
+            class="thumb-item"
+          >
+            <i class="iconfont iconzengjia-" />
+          </UploadAvatar>
+          <div class="tips">
+            为提高人脸识别准确度，请上传同一个人不同角度的人脸照，限传10张
+          </div>
+        </div>
+        <div class="thumb-box f-h">
+          <div class="preview">
+            <img src="" alt="">
+          </div>
+          <div class="thumbs">
+            <div v-for="(t,i) in thumbs" :key="i" class="thumb">
+              <img src="" alt="">
+              <i class="el-icon-close" />
+            </div>
+          </div>
+        </div>
+        <div class="btn">
+          <el-button>取消</el-button>
+          <el-button type="primary">保存</el-button>
+        </div>
+      </div>
+    </div>
 
     <div class="report-box ">
       <div class="section">
@@ -88,10 +121,15 @@
 
 <script>
 import { queryBlacklist, AddBlacklist, delBlacklist, queryWhitelist, AddWhitelist, delWhitelist } from '@/api/regulatoryConfiguration.js'
+import UploadAvatar from '@/components/UploadAvatar/index.vue'
 export default {
-  components: { },
+  components: { UploadAvatar },
   data() {
     return {
+      time: '',
+      day: '',
+      reorpt: '',
+      logo_url: '',
       dialogFormVisible: false,
       options: [
         { label: '白名单', value: 1 },
@@ -115,7 +153,8 @@ export default {
           del: []
         }
 
-      }
+      },
+      thumbs: ['']
     }
   },
   computed: {},
@@ -142,6 +181,9 @@ export default {
   destroyed() {},
   activated() {},
   methods: {
+    avatarChange(res) {
+
+    },
     delTag(item, i) {
       this.tags.splice(i, 1)
       if (this.value === 1) {
@@ -238,6 +280,32 @@ export default {
 </script>
 <style lang='scss' >
 .regulatory-configuration-box{
+
+    .thumb-item {
+      cursor: pointer;
+      width: 96px;
+      height: 72px;
+      background: rgb(250, 250, 250);
+      border: 1px dashed rgba(0, 0, 0, 0.15);
+      float: left;
+      margin-right: 16px;
+      text-align: center;
+      line-height: 72px;
+      border-radius: 0;
+      position: relative;
+      .mask {
+        display: none;
+      }
+      i {
+        color: #bbbbbb !important;
+        font-size: 20px !important;
+      }
+      svg {
+        font-size: 56px;
+        vertical-align: middle;
+        transform: translateY(-4px);
+      }
+    }
   .title{
     margin-bottom: 16px;
     font-family: PingFangSC-Medium;
@@ -277,6 +345,54 @@ export default {
   }
   .report-box{
     padding: 20px 48px 0;
+
+    }
+  .face-box{
+    padding: 20px 48px 0;
+    @include border-b;
+    .up-box{
+      overflow: hidden;
+      display: flex;
+      align-items: baseline;
+      .tips{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #999999;
+        line-height: 16px;
+        // transform: translateY(-10px);
+      }
+    }
+    .thumb-box{
+      margin-top: 34px;
+      .preview{
+        width: 211px;
+        height: 158px;
+        background: #D8D8D8;
+
+      }
+      .thumbs{
+        @include border-l($s:dashed);
+        height: 158px;
+        margin-left: 33px;
+        padding-left:33px ;
+        overflow: hidden;
+      }
+      .thumb{
+        cursor: pointer;
+        position: relative;
+        width: 96px;
+        height: 72px;
+        background: #D8D8D8;
+        margin-right: 24px;
+        margin-bottom: 17px;
+        .el-icon-close{
+          position: absolute;
+          top: 2px;
+          right: 3px;
+        }
+      }
+    }
 
     }
   .info-box{
